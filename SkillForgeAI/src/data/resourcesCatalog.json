@@ -1,0 +1,139 @@
+{
+  "JavaScript": [
+    {
+      "id": "js-101",
+      "title": "Modern JavaScript from the Beginning (ES6+ & Async/Await)",
+      "type": "Course",
+      "platform": "freeCodeCamp / MDN Web Docs",
+      "duration": "14 hours",
+      "difficulty": "Intermediate",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "description": "Master ES6 syntax, Closures, Promises, Async/Await, and Event Loop internals.",
+      "practicalExercise": "Build a responsive Currency Exchange converter utilizing fetch API and async error handling."
+    },
+    {
+      "id": "js-102",
+      "title": "Deep JavaScript Foundations & V8 Engine Internals",
+      "type": "Tutorial",
+      "platform": "Frontend Masters / JavaScript.info",
+      "duration": "8 hours",
+      "difficulty": "Advanced",
+      "url": "https://javascript.info/",
+      "description": "Scope, hoisting, prototypes, coercion, and garbage collection mechanisms in browser engines.",
+      "practicalExercise": "Implement a custom Promise polyfill supporting .then(), .catch(), and Promise.all()."
+    }
+  ],
+  "React": [
+    {
+      "id": "react-201",
+      "title": "React 19 & Component Architecture Masterclass",
+      "type": "Interactive Course",
+      "platform": "Official React Docs & Scrimba",
+      "duration": "18 hours",
+      "difficulty": "Intermediate",
+      "url": "https://react.dev/learn",
+      "description": "Functional components, custom hooks, useEffect lifecycle, state management, and component composition.",
+      "practicalExercise": "Construct an interactive Task Kanban Board with drag-and-drop state persistence."
+    },
+    {
+      "id": "react-202",
+      "title": "Scalable State Management & Performance Optimization",
+      "type": "Practical Guide",
+      "platform": "Kent C. Dodds Guides",
+      "duration": "10 hours",
+      "difficulty": "Advanced",
+      "url": "https://react.dev/learn/scaling-up-with-reducer-and-context",
+      "description": "Context API patterns, useReducer architectures, memoization (useMemo/useCallback), and lazy loading.",
+      "practicalExercise": "Refactor a heavy table dashboard with virtualized scrolling and memoized component tree."
+    }
+  ],
+  "Node.js": [
+    {
+      "id": "node-301",
+      "title": "Node.js Backend Architecture & RESTful API Engineering",
+      "type": "Course",
+      "platform": "Node.js Guides & Traversy Media",
+      "duration": "16 hours",
+      "difficulty": "Intermediate",
+      "url": "https://nodejs.org/en/learn",
+      "description": "Event-driven architecture, EventEmitter, streams, file system I/O, Express routing, and middleware patterns.",
+      "practicalExercise": "Architect an authenticated e-commerce REST API with JWT security and input validation."
+    },
+    {
+      "id": "node-302",
+      "title": "Microservices, Database Integration & Async Concurrency",
+      "type": "Hands-on Workshop",
+      "platform": "Architecting Node Systems",
+      "duration": "12 hours",
+      "difficulty": "Advanced",
+      "url": "https://nodejs.org/docs/latest/api/",
+      "description": "Connection pooling, PostgreSQL/MongoDB drivers, worker threads, rate limiting, and structured logging.",
+      "practicalExercise": "Build a real-time event streaming service with WebSocket and database audit logging."
+    }
+  ],
+  "HTML & CSS": [
+    {
+      "id": "html-001",
+      "title": "Modern Semantic HTML5, CSS Grid & Flexbox Mastery",
+      "type": "Interactive Tutorial",
+      "platform": "MDN Web Docs",
+      "duration": "6 hours",
+      "difficulty": "Beginner",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML",
+      "description": "Semantic markup, accessibility (a11y), responsive viewport units, and modern flex/grid layouts.",
+      "practicalExercise": "Create an accessible responsive pricing table with WCAG AAA contrast and keyboard navigation."
+    }
+  ],
+  "SQL": [
+    {
+      "id": "sql-101",
+      "title": "Relational Database Design, Indexing & Complex Joins",
+      "type": "Course",
+      "platform": "PostgreSQL Tutorial / Mode Analytics",
+      "duration": "10 hours",
+      "difficulty": "Intermediate",
+      "url": "https://www.postgresqltutorial.com/",
+      "description": "Normalization (1NF-3NF), multi-table joins, subqueries, indexing strategies, and transaction ACID properties.",
+      "practicalExercise": "Design an online booking database schema and write analytical queries for monthly active users."
+    }
+  ],
+  "Python": [
+    {
+      "id": "py-101",
+      "title": "Python for Software Engineering & API Services",
+      "type": "Course",
+      "platform": "Real Python",
+      "duration": "12 hours",
+      "difficulty": "Intermediate",
+      "url": "https://realpython.com/",
+      "description": "OOP design patterns, decorators, generators, unit testing with pytest, and async asyncio.",
+      "practicalExercise": "Build a background log parser and metrics aggregation CLI tool."
+    }
+  ],
+  "Git & Version Control": [
+    {
+      "id": "git-101",
+      "title": "Professional Git Workflows, Branching Strategies & PRs",
+      "type": "Hands-on Guide",
+      "platform": "Git Documentation",
+      "duration": "4 hours",
+      "difficulty": "Beginner",
+      "url": "https://git-scm.com/doc",
+      "description": "Interactive rebase, cherry-pick, merge conflict resolution, and trunk-based development.",
+      "practicalExercise": "Simulate a multi-contributor repo merge conflict and resolve it via terminal rebase."
+    }
+  ],
+  "REST APIs": [
+    {
+      "id": "api-101",
+      "title": "RESTful API Best Practices, HTTP Semantics & Security",
+      "type": "Guide",
+      "platform": "RESTful API Standards",
+      "duration": "6 hours",
+      "difficulty": "Intermediate",
+      "url": "https://restfulapi.net/",
+      "description": "Status codes, idempotent methods, rate limiting, OpenAPI 3.0 specs, and OWASP Top 10 API security.",
+      "practicalExercise": "Document a full CRUD API using Swagger/OpenAPI spec and write automated contract tests."
+    }
+  ]
+}

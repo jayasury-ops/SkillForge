@@ -1,0 +1,138 @@
+{
+  "JavaScript": [
+    {
+      "id": "q-js-1",
+      "question": "What is the expected output of this code snippet regarding the JavaScript event loop?",
+      "code": "console.log('1');\nsetTimeout(() => console.log('2'), 0);\nPromise.resolve().then(() => console.log('3'));\nconsole.log('4');",
+      "options": [
+        "1, 2, 3, 4",
+        "1, 4, 3, 2",
+        "1, 4, 2, 3",
+        "1, 3, 4, 2"
+      ],
+      "correctIndex": 1,
+      "explanation": "Synchronous code executes first (1, 4). Microtasks (Promises) run before macrotasks (setTimeout), yielding 1, 4, 3, 2.",
+      "remediationTopic": "Event Loop & Microtask Queue"
+    },
+    {
+      "id": "q-js-2",
+      "question": "Which statement accurately describes JavaScript Closures?",
+      "code": "function counter() {\n  let count = 0;\n  return () => ++count;\n}",
+      "options": [
+        "A function that executes immediately upon declaration.",
+        "A combination of a function bundled together with references to its surrounding lexical environment.",
+        "A method to block garbage collection of the entire global scope.",
+        "An asynchronous callback that runs in a background thread."
+      ],
+      "correctIndex": 1,
+      "explanation": "A closure gives an inner function access to an outer function's scope even after the outer function has returned.",
+      "remediationTopic": "Lexical Scope & Closures"
+    },
+    {
+      "id": "q-js-3",
+      "question": "How should an unhandled rejection in an async function be safely intercepted?",
+      "code": "async function fetchData() {\n  // fetch operation\n}",
+      "options": [
+        "Using a global window.onerror handler only",
+        "Wrapping the await expression in a try...catch block",
+        "Adding a setTimeout wrapper",
+        "Async functions cannot reject"
+      ],
+      "correctIndex": 1,
+      "explanation": "try...catch blocks cleanly catch both synchronous exceptions and rejected promises inside async functions.",
+      "remediationTopic": "Async/Await Error Handling"
+    }
+  ],
+  "React": [
+    {
+      "id": "q-react-1",
+      "question": "Why is it forbidden to call React Hooks inside conditional statements or loops?",
+      "code": "if (isLoggedIn) {\n  useEffect(() => { ... }, []);\n}",
+      "options": [
+        "Because JavaScript syntax prohibits function calls inside conditionals.",
+        "React relies on the exact order of Hook calls across renders to match up internal state arrays.",
+        "Hooks require immediate access to the DOM window object.",
+        "It triggers an automatic memory leak in V8 engine."
+      ],
+      "correctIndex": 1,
+      "explanation": "React stores hook states in an ordered linked list/array indexed by call order. Conditional execution disrupts index alignment.",
+      "remediationTopic": "Rules of Hooks & Internal Call Order"
+    },
+    {
+      "id": "q-react-2",
+      "question": "What is the primary benefit of the useMemo Hook in React?",
+      "code": "const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);",
+      "options": [
+        "It caches computationally heavy results between renders unless dependencies change.",
+        "It forces an immediate re-render of child components.",
+        "It mutates DOM nodes directly without synthetic events.",
+        "It replaces the need for useState in functional components."
+      ],
+      "correctIndex": 0,
+      "explanation": "useMemo caches the result of an expensive calculation between re-renders until one of its dependencies changes.",
+      "remediationTopic": "React Memoization & Performance"
+    }
+  ],
+  "Node.js": [
+    {
+      "id": "q-node-1",
+      "question": "In Node.js, what is the key difference between process.nextTick() and setImmediate()?",
+      "code": "process.nextTick(() => console.log('A'));\nsetImmediate(() => console.log('B'));",
+      "options": [
+        "process.nextTick fires at the end of the current operation phase before the event loop continues; setImmediate fires in the Check phase of the loop.",
+        "setImmediate runs synchronously; process.nextTick runs in a worker thread.",
+        "There is no difference; they are aliases.",
+        "process.nextTick was deprecated in Node.js 14."
+      ],
+      "correctIndex": 0,
+      "explanation": "process.nextTick callbacks are resolved immediately after the current operation completes, prior to the event loop advancing.",
+      "remediationTopic": "Node.js Event Loop Phases & Concurrency"
+    },
+    {
+      "id": "q-node-2",
+      "question": "Which middleware signature is recognized by Express as an error handling middleware?",
+      "code": "app.use((err, req, res, next) => { ... });",
+      "options": [
+        "(req, res, err)",
+        "(err, req, res, next) with exactly 4 parameters",
+        "(req, res, next)",
+        "(error, callback)"
+      ],
+      "correctIndex": 1,
+      "explanation": "Express inspects fn.length. Middleware with 4 parameters (err, req, res, next) is treated strictly as an error handler.",
+      "remediationTopic": "Express Error Handling Architecture"
+    }
+  ],
+  "SQL": [
+    {
+      "id": "q-sql-1",
+      "question": "What is the difference between WHERE and HAVING clauses in SQL?",
+      "code": "SELECT dept, COUNT(*) FROM employees WHERE salary > 50000 GROUP BY dept HAVING COUNT(*) > 5;",
+      "options": [
+        "WHERE filters rows before aggregation; HAVING filters aggregated groups after GROUP BY.",
+        "HAVING is only used for string matching; WHERE is used for numbers.",
+        "WHERE requires an index; HAVING does not.",
+        "They can be used interchangeably."
+      ],
+      "correctIndex": 0,
+      "explanation": "WHERE filters individual table rows prior to grouping, while HAVING filters aggregated group metrics.",
+      "remediationTopic": "SQL Grouping & Aggregation Semantics"
+    }
+  ],
+  "Python": [
+    {
+      "id": "q-py-1",
+      "question": "What does the GIL (Global Interpreter Lock) in CPython enforce?",
+      "code": "import threading",
+      "options": [
+        "It prevents multiple Python processes from running on the machine.",
+        "It ensures only one native thread executes Python bytecode at any given moment.",
+        "It locks the filesystem during file write operations.",
+        "It enforces memory immutability for all dictionary keys."
+      ],
+      "correctIndex": 1,
+      "explanation": "The CPython GIL is a mutex protecting access to Python objects, preventing multiple threads from executing bytecode simultaneously.",
+      "remediationTopic": "Python Concurrency & GIL Internals"
+    }
+  ]
+}

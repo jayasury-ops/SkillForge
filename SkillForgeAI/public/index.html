@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillForge AI - Agentic Personalized Learning & Career Pathing Platform</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="brand-group">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">SkillForge <span class="badge-agentic">AGENTIC AI</span></h1>
+          <p class="brand-subtitle">Your personalized learning workspace</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <details class="demo-menu">
+          <summary class="btn btn-secondary demo-menu-trigger">Demo scenarios <span aria-hidden="true">⌄</span></summary>
+          <div class="demo-menu-panel">
+            <p class="demo-menu-title">Explore the sample workflow</p>
+            <button id="btnDemoSampleScenario" class="demo-action">
+              <span class="demo-action-icon">01</span>
+              <span><b>Load sample learner</b><small>Reset Alex Chen's Full Stack profile</small></span>
+            </button>
+            <button id="btnDemoAssessmentFail" class="demo-action">
+              <span class="demo-action-icon">02</span>
+              <span><b>Trigger adaptive support</b><small>Simulate a quiz score below 70%</small></span>
+            </button>
+            <button id="btnDemoGoalChange" class="demo-action">
+              <span class="demo-action-icon">03</span>
+              <span><b>Change career goal</b><small>Explore the AI / ML Engineer pathway</small></span>
+            </button>
+          </div>
+        </details>
+
+        <div class="learner-quick-badge">
+          <span class="avatar-circle" id="headerAvatar">AC</span>
+          <div class="learner-quick-info">
+            <span class="learner-name" id="headerLearnerName">Alex Chen</span>
+            <span class="learner-target" id="headerTargetCareer">Full Stack Developer</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace-shell">
+      <aside class="workspace-sidebar">
+        <p class="sidebar-label">Your workspace</p>
+        <nav class="feature-nav" aria-label="Learning workspace" role="tablist">
+          <button type="button" id="tab-profile-nav" role="tab" tabindex="0" class="nav-tab active" data-tab="tab-profile" aria-controls="tab-profile" aria-selected="true">
+            <span class="tab-icon">◉</span><span class="nav-tab-label">My profile</span><span class="nav-index">01</span>
+          </button>
+          <button type="button" id="tab-skill-analysis-nav" role="tab" tabindex="-1" class="nav-tab" data-tab="tab-skill-analysis" aria-controls="tab-skill-analysis" aria-selected="false">
+            <span class="tab-icon">⌁</span><span class="nav-tab-label">Skill analysis</span><span class="nav-index">02</span>
+          </button>
+          <button type="button" id="tab-career-matching-nav" role="tab" tabindex="-1" class="nav-tab" data-tab="tab-career-matching" aria-controls="tab-career-matching" aria-selected="false">
+            <span class="tab-icon">◎</span><span class="nav-tab-label">Career match</span><span class="nav-index">03</span>
+          </button>
+          <button type="button" id="tab-roadmap-nav" role="tab" tabindex="-1" class="nav-tab" data-tab="tab-roadmap" aria-controls="tab-roadmap" aria-selected="false">
+            <span class="tab-icon">↗</span><span class="nav-tab-label">Learning roadmap</span><span class="nav-index">04</span>
+          </button>
+          <button type="button" id="tab-progress-nav" role="tab" tabindex="-1" class="nav-tab" data-tab="tab-progress" aria-controls="tab-progress" aria-selected="false">
+            <span class="tab-icon">▤</span><span class="nav-tab-label">Progress &amp; tests</span><span class="nav-index">05</span>
+          </button>
+          <button type="button" id="tab-mentor-nav" role="tab" tabindex="-1" class="nav-tab" data-tab="tab-mentor" aria-controls="tab-mentor" aria-selected="false">
+            <span class="tab-icon">✳</span><span class="nav-tab-label">AI mentor</span><span class="nav-index">06</span>
+          </button>
+        </nav>
+        <div class="sidebar-note">
+          <span class="sidebar-note-mark">✦</span>
+          <p><b>One step at a time</b><span>Your roadmap adapts as you learn.</span></p>
+        </div>
+      </aside>
+
+      <div class="workspace-content">
+        <main class="main-content">
+      
+      <!-- ================= FEATURE 1: USER PROFILE ================= -->
+      <section id="tab-profile" class="tab-pane active" role="tabpanel" tabindex="0" aria-labelledby="tab-profile-nav">
+        <section class="learning-hero" aria-labelledby="learningHeroTitle">
+          <div class="hero-copy">
+            <p class="hero-eyebrow"><span class="hero-live-dot"></span> A path made for you</p>
+            <h2 id="learningHeroTitle">Learn with purpose.<br><em>Grow into what's next.</em></h2>
+            <p class="hero-description">A little progress, consistently made, can take you somewhere remarkable. Your next step is already taking shape.</p>
+            <div class="hero-actions">
+              <button type="button" class="btn hero-primary" data-open-tab="tab-roadmap">Explore my roadmap <span aria-hidden="true">→</span></button>
+              <button type="button" class="btn hero-secondary" data-open-tab="tab-career-matching">See career fit</button>
+            </div>
+            <div class="hero-footnote"><span aria-hidden="true">✦</span> Personalized around your skills, goals, and pace</div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art-orbit hero-art-orbit-one"></div>
+            <div class="hero-art-orbit hero-art-orbit-two"></div>
+            <div class="hero-art-sun"></div>
+            <div class="hero-art-spark hero-art-spark-one">✦</div>
+            <div class="hero-art-spark hero-art-spark-two">✳</div>
+            <div class="hero-float-card hero-goal-card">
+              <span class="hero-card-label">YOUR NORTH STAR</span>
+              <strong id="homeCareerGoal">Your career goal</strong>
+              <span class="hero-card-caption">A direction, not a deadline</span>
+            </div>
+            <div class="hero-float-card hero-next-card">
+              <span class="hero-next-icon">↗</span>
+              <span class="hero-card-label">UP NEXT</span>
+              <strong id="homeNextMilestone">Your first learning milestone</strong>
+            </div>
+            <div class="hero-art-caption">Curiosity looks good on you.</div>
+          </div>
+        </section>
+
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">01 / Get to know you</span>
+            <h2>Start with what you know</h2>
+            <p>Bring your experience together in one place. Your profile helps shape a pathway that fits your goals.</p>
+          </div>
+          <button id="btnSaveProfile" class="btn btn-primary">Save profile</button>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Personal & Academic Details Card -->
+          <div class="card">
+            <div class="card-title"><h3>About you &amp; your goal</h3></div>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="profName" class="input-control" value="Alex Chen">
+            </div>
+            <div class="form-group">
+              <label>University / Institution</label>
+              <input type="text" id="profInstitution" class="input-control" value="Tech Institute / University">
+            </div>
+            <div class="form-group">
+              <label>Target Career Role</label>
+              <select id="profTargetCareer" class="input-control select-control">
+                <!-- Dynamically populated -->
+              </select>
+              <small class="hint-text">Changing your target updates your skill match and learning plan.</small>
+            </div>
+            <div class="form-group">
+              <label>Bio / Background</label>
+              <textarea id="profBio" class="input-control textarea-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <!-- Existing Skills Card -->
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title"><h3>Skills &amp; proficiency</h3></div>
+              <button id="btnAddSkill" class="btn btn-sm btn-secondary">+ Add Skill</button>
+            </div>
+            <p class="card-subtext">Add the skills you already use and rate your confidence from 1 to 5.</p>
+            <div id="skillsListContainer" class="skills-list-editor">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2col mt-4">
+          <!-- Certifications Card -->
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title"><h3>Certifications & Credentials</h3></div>
+              <button id="btnAddCert" class="btn btn-sm btn-secondary">+ Add Certificate</button>
+            </div>
+            <div id="certsListContainer" class="item-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Projects Card -->
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title"><h3>Portfolio Projects & Practical Proof</h3></div>
+              <button id="btnAddProject" class="btn btn-sm btn-secondary">+ Add Project</button>
+            </div>
+            <div id="projectsListContainer" class="item-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 2: SKILL ANALYSIS ================= -->
+      <section id="tab-skill-analysis" class="tab-pane" role="tabpanel" tabindex="0" aria-labelledby="tab-skill-analysis-nav">
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">02 / Understand your strengths</span>
+            <h2>Your skill snapshot</h2>
+            <p>See what you already do well, where to build confidence, and how your experience supports your next step.</p>
+          </div>
+          <span class="agent-tag"><span class="pulse-dot"></span> SkillProfilerAgent Active</span>
+        </div>
+
+        <div class="stats-overview-grid">
+          <div class="stat-card">
+            <span class="stat-label">Profile Completeness</span>
+            <span class="stat-value" id="statCompleteness">85%</span>
+            <span class="stat-sub">Audited by AI Profiler</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Established Strengths</span>
+            <span class="stat-value text-success" id="statStrengthsCount">2</span>
+            <span class="stat-sub">Proficiency Level &ge; 3</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Emerging Weaknesses</span>
+            <span class="stat-value text-warning" id="statWeaknessesCount">1</span>
+            <span class="stat-sub">Proficiency Level &lt; 3</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Avg. Existing Level</span>
+            <span class="stat-value text-accent" id="statAvgLevel">2.7 / 5</span>
+            <span class="stat-sub">Across All Declared Skills</span>
+          </div>
+        </div>
+
+        <div class="grid-2col mt-4">
+          <!-- Strengths vs Weaknesses Breakdown -->
+          <div class="card">
+            <div class="card-title"><h3>Competency Classification</h3></div>
+            <h4 class="section-subheading text-success">✅ Established Strengths</h4>
+            <div id="strengthsContainer" class="badge-card-list"></div>
+
+            <h4 class="section-subheading text-warning mt-4">⚠️ Emerging / Foundational Areas</h4>
+            <div id="weaknessesContainer" class="badge-card-list"></div>
+          </div>
+
+          <!-- Practical Project Correlation -->
+          <div class="card">
+            <div class="card-title"><h3>Practical Validation via Projects & Certs</h3></div>
+            <p class="card-subtext">The agent analyzes whether declared competencies are backed by hands-on code artifacts.</p>
+            <div id="practicalValidationContainer" class="validation-feed"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 3: CAREER MATCHING ================= -->
+      <section id="tab-career-matching" class="tab-pane" role="tabpanel" tabindex="0" aria-labelledby="tab-career-matching-nav">
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">03 / Connect skills to a goal</span>
+            <h2>Explore your career fit</h2>
+            <p>Compare your current skills with your chosen role and focus on the gaps that matter most.</p>
+          </div>
+          <span class="agent-tag"><span class="pulse-dot"></span> CareerMatcherAgent Active</span>
+        </div>
+
+        <!-- Career Target Banner -->
+        <div class="card career-match-banner">
+          <div class="career-match-left">
+            <div class="target-badge">TARGET CAREER BENCHMARK</div>
+            <h3 id="matchTargetTitle" class="career-title-display">Full Stack Developer</h3>
+            <p id="matchTargetDomain" class="domain-text">Software Engineering & Web Development</p>
+            <p id="matchTargetDesc" class="role-desc">Builds comprehensive web applications spanning dynamic client-side interfaces, robust REST APIs, databases, and deployment.</p>
+          </div>
+          <div class="career-match-score-box">
+            <div class="circular-score">
+              <span id="readinessScoreVal" class="score-number">42%</span>
+              <span class="score-label">Role Readiness</span>
+            </div>
+            <div class="score-caption" id="readinessScoreCaption">Moderate Gap: Core skills needed</div>
+          </div>
+        </div>
+
+        <!-- Missing Skills Breakdown -->
+        <div class="grid-3col mt-4">
+          <div class="card card-alert-danger">
+            <div class="card-title"><h3 class="text-danger">🚨 Missing Critical Skills</h3></div>
+            <p class="card-subtext">Essential skills required to qualify for this job role.</p>
+            <div id="missingCriticalContainer" class="gap-skill-list"></div>
+          </div>
+
+          <div class="card card-alert-warning">
+            <div class="card-title"><h3 class="text-warning">⚡ Partial Matches (Level Up)</h3></div>
+            <p class="card-subtext">Skills present, but depth is below industry threshold.</p>
+            <div id="partiallyMatchedContainer" class="gap-skill-list"></div>
+          </div>
+
+          <div class="card card-alert-success">
+            <div class="card-title"><h3 class="text-success">✅ Mastered Benchmarks</h3></div>
+            <p class="card-subtext">Skills already meeting or exceeding expectations.</p>
+            <div id="masteredSkillsContainer" class="gap-skill-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 4: LEARNING RECOMMENDATIONS ================= -->
+      <section id="tab-roadmap" class="tab-pane" role="tabpanel" tabindex="0" aria-labelledby="tab-roadmap-nav">
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">04 / Turn goals into progress</span>
+            <h2>Your learning roadmap</h2>
+            <p>A practical sequence of milestones, learning resources, and projects tailored to your target role.</p>
+          </div>
+          <div class="roadmap-meta-stats">
+            <span class="meta-pill" id="roadmapHoursPill">⏳ 75 Total Hours</span>
+            <span class="meta-pill" id="roadmapWeeksPill">📅 ~7 Weeks Job-Ready</span>
+          </div>
+        </div>
+
+        <!-- Active Remediation Alert (Appears dynamically if assessment failed) -->
+        <div id="remediationAlertBanner" class="alert-banner hidden">
+          <div class="alert-icon">⚡</div>
+          <div class="alert-content">
+            <h4>Adaptive Remediation Injected into Roadmap</h4>
+            <p id="remediationAlertText">The Adaptive AI Mentor detected a score below 70% in a recent assessment and has inserted prerequisite micro-drills to consolidate core understanding before advancing.</p>
+          </div>
+        </div>
+
+        <!-- Chronological Milestones Timeline -->
+        <div id="roadmapMilestonesTimeline" class="timeline-container">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 5: PROGRESS TRACKING & ASSESSMENTS ================= -->
+      <section id="tab-progress" class="tab-pane" role="tabpanel" tabindex="0" aria-labelledby="tab-progress-nav">
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">05 / Keep your momentum</span>
+            <h2>Progress &amp; skill checks</h2>
+            <p>Track completed milestones, check your understanding, and review how your skills are growing.</p>
+          </div>
+          <span class="agent-tag"><span class="pulse-dot"></span> AssessmentEvaluatorAgent Active</span>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Assessment Testing Sandbox -->
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title"><h3>Diagnostic Skill Assessment</h3></div>
+              <div class="skill-select-wrapper">
+                <label>Skill: </label>
+                <select id="assessmentSkillSelector" class="input-control select-control-sm">
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="React">React</option>
+                  <option value="Node.js">Node.js</option>
+                  <option value="SQL">SQL</option>
+                  <option value="Python">Python</option>
+                </select>
+                <button id="btnLoadAssessment" class="btn btn-sm btn-secondary">Load Test</button>
+              </div>
+            </div>
+            
+            <p class="card-subtext">Take an objective diagnostic test. Scoring &lt; 70% triggers the <b>AdaptiveMentorAgent</b> to intervene with custom remediation!</p>
+
+            <div id="quizContainer" class="quiz-container">
+              <!-- Dynamically populated with questions -->
+              <p class="empty-state">Select a skill and click "Load Test" to start the diagnostic quiz.</p>
+            </div>
+          </div>
+
+          <!-- Progress Metrics & Velocity -->
+          <div class="card">
+            <div class="card-title"><h3>Learner Velocity & Milestones Progress</h3></div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-header">
+                <span>Milestone Completion</span>
+                <span id="milestoneProgressPercent">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="milestoneProgressBar" class="progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="stats-mini-row mt-4">
+              <div class="mini-stat">
+                <span class="mini-stat-val" id="completedMilestonesCount">0</span>
+                <span class="mini-stat-lbl">Milestones Done</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-val" id="totalHoursInvested">0 hrs</span>
+                <span class="mini-stat-lbl">Hours Invested</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-val" id="testsAttemptedCount">0</span>
+                <span class="mini-stat-lbl">Assessments Taken</span>
+              </div>
+            </div>
+
+            <h4 class="mt-4">Recent Assessment History</h4>
+            <div id="assessmentHistoryContainer" class="history-list">
+              <p class="empty-state">No assessments completed yet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURE 6: AI MENTOR & AGENT COLLABORATION ================= -->
+      <section id="tab-mentor" class="tab-pane" role="tabpanel" tabindex="0" aria-labelledby="tab-mentor-nav">
+        <div class="pane-header">
+          <div>
+            <span class="section-kicker">06 / Get help when you need it</span>
+            <h2>Your AI learning companion</h2>
+            <p>Ask questions about your plan and get guidance informed by your goals, skills, and recent activity.</p>
+          </div>
+          <span class="agent-tag"><span class="pulse-dot"></span> Multi-Agent Swarm Online</span>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Mentor Chat Console -->
+          <div class="card chat-card">
+            <div class="card-title chat-header">
+              <div class="mentor-badge-avatar">🤖</div>
+              <div>
+                <h3>SkillForge AI Mentor</h3>
+                <span class="chat-status">Personalized guidance for your goals and learning plan</span>
+              </div>
+            </div>
+
+            <div id="chatMessages" class="chat-messages-container">
+              <!-- Messages will stream here -->
+            </div>
+
+            <div class="chat-quick-prompts">
+              <span class="prompt-chip" data-prompt="Why do I need Node.js if I already know Python?">Why Node.js with Python?</span>
+              <span class="prompt-chip" data-prompt="How do React hooks work and why are they useful?">Explain React Hooks</span>
+              <span class="prompt-chip" data-prompt="How long will it take me to become job ready?">Roadmap & Time to Job</span>
+            </div>
+
+            <form id="chatForm" class="chat-input-bar">
+              <input type="text" id="chatInput" class="input-control" placeholder="Ask your AI Mentor anything about your skills, roadmap, or concepts..." autocomplete="off">
+              <button type="submit" class="btn btn-primary btn-send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Multi-Agent Collaboration Deliberation Visualizer -->
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">
+                <h3>Agent Collaboration Blackboard</h3>
+              </div>
+              <button id="btnRefreshDelib" class="btn btn-sm btn-secondary">↻ Refresh Feed</button>
+            </div>
+            <p class="card-subtext">Watch how 5 specialized AI agents communicate, deliberate, and adjust learning paths in real-time:</p>
+            
+            <div class="agent-legend">
+              <span class="legend-badge legend-profiler">SkillProfiler</span>
+              <span class="legend-badge legend-matcher">CareerMatcher</span>
+              <span class="legend-badge legend-architect">CurriculumArchitect</span>
+              <span class="legend-badge legend-evaluator">AssessmentEvaluator</span>
+              <span class="legend-badge legend-mentor">AdaptiveMentor</span>
+            </div>
+
+            <div id="deliberationFeed" class="deliberation-stream">
+              <!-- Deliberation logs streamed here -->
+            </div>
+          </div>
+        </div>
+      </section>
+        </main>
+
+        <footer class="app-footer">
+          <span>SkillForge AI</span><span>Personalized learning, built around you.</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

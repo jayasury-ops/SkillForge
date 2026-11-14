@@ -1,0 +1,132 @@
+{
+  "learners": [
+    {
+      "id": "learner-001",
+      "name": "Alex Chen",
+      "email": "alex.chen@university.edu",
+      "institution": "Tech Institute / University",
+      "targetCareerId": "ai-ml-engineer",
+      "targetCareerTitle": "AI / Machine Learning Engineer",
+      "bio": "Aspiring Full Stack Engineer with strong foundational backend scripting and relational database experience.",
+      "existingSkills": [
+        {
+          "name": "Python",
+          "level": 3,
+          "category": "Backend / Scripting",
+          "verified": true
+        },
+        {
+          "name": "SQL",
+          "level": 3,
+          "category": "Databases",
+          "verified": true
+        },
+        {
+          "name": "HTML & CSS",
+          "level": 2,
+          "category": "Web Basics",
+          "verified": true
+        }
+      ],
+      "certifications": [
+        {
+          "title": "Python for Everybody Specialization",
+          "issuer": "Coursera / Univ. of Michigan",
+          "year": "2024"
+        },
+        {
+          "title": "Relational Database Fundamentals",
+          "issuer": "FreeCodeCamp",
+          "year": "2024"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Python CLI Data Scraper",
+          "description": "Automated web scraper with BeautifulSoup parsing tabular datasets.",
+          "technologies": [
+            "Python",
+            "BeautifulSoup"
+          ]
+        },
+        {
+          "name": "Retail Store Inventory Database",
+          "description": "Normalized relational schema with 8 tables and complex analytical SQL queries.",
+          "technologies": [
+            "SQL",
+            "PostgreSQL"
+          ]
+        }
+      ],
+      "progress": {
+        "completedMilestones": [
+          "m-rem-1"
+        ],
+        "assessmentHistory": [
+          {
+            "id": "test-1794638519322",
+            "skillName": "JavaScript",
+            "scorePercent": 0,
+            "passed": false,
+            "date": "2026-11-14T06:41:59.322Z"
+          },
+          {
+            "id": "test-1794638516806",
+            "skillName": "JavaScript",
+            "scorePercent": 0,
+            "passed": false,
+            "date": "2026-11-14T06:41:56.806Z"
+          },
+          {
+            "id": "test-1794638514308",
+            "skillName": "JavaScript",
+            "scorePercent": 0,
+            "passed": false,
+            "date": "2026-11-14T06:41:54.308Z"
+          },
+          {
+            "id": "test-1794638503873",
+            "skillName": "JavaScript",
+            "scorePercent": 0,
+            "passed": false,
+            "date": "2026-11-14T06:41:43.873Z"
+          },
+          {
+            "id": "test-1794637141197",
+            "skillName": "JavaScript",
+            "scorePercent": 0,
+            "passed": false,
+            "date": "2026-11-14T06:19:01.201Z"
+          },
+          {
+            "id": "test-1794637120197",
+            "skillName": "SQL",
+            "scorePercent": 100,
+            "passed": true,
+            "date": "2026-11-14T06:18:40.197Z"
+          }
+        ],
+        "overallReadinessScore": 23,
+        "hoursInvested": 10,
+        "activeRemediations": [
+          {
+            "skill": "JavaScript",
+            "topic": "Event Loop & Microtask Queue",
+            "reason": "Learner struggled with: \"What is the expected output of this code snippet regarding the JavaScript event ...\". Need reinforcement on Event Loop & Microtask Queue."
+          },
+          {
+            "skill": "JavaScript",
+            "topic": "Lexical Scope & Closures",
+            "reason": "Learner struggled with: \"Which statement accurately describes JavaScript Closures?...\". Need reinforcement on Lexical Scope & Closures."
+          },
+          {
+            "skill": "JavaScript",
+            "topic": "Async/Await Error Handling",
+            "reason": "Learner struggled with: \"How should an unhandled rejection in an async function be safely intercepted?...\". Need reinforcement on Async/Await Error Handling."
+          }
+        ]
+      },
+      "agentAuditLog": []
+    }
+  ]
+}
